@@ -60,9 +60,21 @@
             padding: 20px;
             color: #fff;
         }
+        header img {
+            max-width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #ffc107;
+        }
         header h1 {
             margin: 0;
-            font-size: 4vw; /* Escala el tamaño del texto dependiendo del ancho de la pantalla */
+            font-size: 8vw; /* Escala mejor para móviles */
             letter-spacing: 2px;
             background: linear-gradient(45deg, #ff5733, #ffc300, #28a745, #00bcd4);
             background-clip: text;
@@ -80,7 +92,7 @@
 
         header h1 span {
             display: block;
-            font-size: 5vw; /* Escala adicional para SAN SILVESTRE */
+            font-size: 9vw; /* Escala adicional para SAN SILVESTRE */
             font-weight: bold;
         }
         @keyframes colorChange {
@@ -146,7 +158,7 @@
 <body>
     <!-- Animación de carga -->
     <div id="loading">
-        <p>🎄San Silvestre El Peral 2024🎅</p>
+        <p>🎄 San Silvestre El Peral 2024 🎅</p>
         <div id="lights">
             <div class="light"></div>
             <div class="light"></div>
@@ -156,12 +168,12 @@
     </div>
     <!-- Contenido principal -->
     <header>
-        <img src="logoclub.PNG" alt="Logo Club Atletismo El Peral">
+        <img src="logoclub.png" alt="Logo Club Atletismo El Peral">
+        <p class="subtitle">Presenta...</p>
         <h1>
             <span>SAN SILVESTRE</span>
             EL PERAL 2024
         </h1>
-        
     </header>
     <div class="container">
         <div class="poster">
