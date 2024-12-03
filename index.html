@@ -13,20 +13,62 @@
             color: #004d60;
             text-align: center;
         }
+        /* Animación de carga */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #00796b;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        #lights {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .light {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+        .light:nth-child(1) { background-color: red; animation-delay: 0s; }
+        .light:nth-child(2) { background-color: yellow; animation-delay: 0.3s; }
+        .light:nth-child(3) { background-color: green; animation-delay: 0.6s; }
+        .light:nth-child(4) { background-color: blue; animation-delay: 0.9s; }
+        @keyframes blink {
+            50% { opacity: 0.5; }
+        }
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        /* Fin de la animación */
         header {
             background-color: #00796b;
             padding: 20px;
             color: #fff;
         }
-        header img {
-            max-width: 120px;
-            height: auto;
-            margin-bottom: 10px;
-        }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
             letter-spacing: 2px;
+        }
+        header h1 span {
+            display: block;
+            font-size: 4rem;
+            font-weight: bold;
         }
         header p {
             margin: 5px 0 0;
@@ -34,6 +76,17 @@
         }
         .container {
             padding: 50px 20px;
+        }
+        .poster {
+            margin: 20px auto;
+            max-width: 400px;
+            text-align: center;
+        }
+        .poster img {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
         }
         .event-details {
             background-color: #ffffff;
@@ -64,41 +117,35 @@
             border-radius: 50px;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        .register-button:hover {
-            background-color: #007c91;
-            transform: scale(1.05);
-        }
-        .poster {
-            margin: 40px auto;
-            max-width: 700px;
-            text-align: center;
-        }
-        .poster img {
-            width: 100%;
-            max-width: 700px;
-            border-radius: 10px;
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-        }
         footer {
             margin-top: 30px;
             padding: 20px;
             background-color: #004d60;
             color: #e0f7fa;
         }
-        footer p {
-            margin: 0;
-            font-size: 1rem;
-        }
     </style>
 </head>
 <body>
+    <!-- Animación de carga -->
+    <div id="loading">
+        <p>🎄 San Silvestre El Peral 2024 🎅</p>
+        <div id="lights">
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+        </div>
+    </div>
+    <!-- Contenido principal -->
     <header>
-        <img src="logoclub.PNG" alt="Logo Club Atletismo El Peral">
-        <h1>San Silvestre El Peral 2024</h1>
+        <img src="logoclub.png" alt="Logo Club Atletismo El Peral">
+        <h1>
+            <span>SAN SILVESTRE</span>
+            EL PERAL 2024
+        </h1>
         <p>Organizada por el CLUB ATLETISMO EL PERAL</p>
     </header>
     <div class="container">
-        <!-- Sección para el cartel -->
         <div class="poster">
             <h2>Cartel de la Prueba</h2>
             <img src="SanSilvestrePeraleña2024.png" alt="Cartel San Silvestre El Peral 2024">
@@ -116,5 +163,11 @@
     <footer>
         <p>© 2024 Club Atletismo El Peral | Con la colaboración del Ayuntamiento de El Peral</p>
     </footer>
+    <script>
+        // Ocultar la animación de carga después de 3 segundos
+        setTimeout(() => {
+            document.getElementById('loading').style.display = 'none';
+        }, 3000);
+    </script>
 </body>
 </html>
